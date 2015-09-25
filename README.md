@@ -1,4 +1,6 @@
 # Frontend side for angular-sailsjs-boilerplate
+[![Dependency Status](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend.svg)](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend)
+[![devDependency Status](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend/dev-status.svg)](https://david-dm.org/tarlepp/angular-sailsjs-boilerplate-frontend#info=devDependencies)
 
 This frontend code is used on [angular-sailsjs-boilerplate](https://github.com/tarlepp/angular-sailsjs-boilerplate)
 
