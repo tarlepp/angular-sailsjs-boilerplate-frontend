@@ -186,9 +186,7 @@ gulp.task('dist', ['vendors', 'assets', 'fonts', 'styles-dist', 'scripts-dist'],
 gulp.task('statics', g.serve({
   port: settings.frontend.ports.development,
   root: ['./.tmp', './src/app', './bower_components'],
-  middleware: function(req, res, next) {
-    return historyApiFallback(req, res, next);
-  }
+  middleware: historyApiFallback({})
 }));
 
 /**
@@ -197,9 +195,7 @@ gulp.task('statics', g.serve({
 gulp.task('production', g.serve({
   port: settings.frontend.ports.production,
   root: ['./dist'],
-  middleware: function(req, res, next) {
-    return historyApiFallback(req, res, next);
-  }
+  middleware: historyApiFallback({})
 }));
 
 /**
