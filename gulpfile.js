@@ -11,6 +11,7 @@ var queue = require('streamqueue');
 var lazypipe = require('lazypipe');
 var stylish = require('jshint-stylish');
 var bower = require('./bower');
+var mainBowerFiles = require('main-bower-files');
 var historyApiFallback = require('connect-history-api-fallback');
 var isWatching = false;
 
@@ -96,7 +97,7 @@ gulp.task('templates-dist', function() {
  * Vendors
  */
 gulp.task('vendors', function() {
-  var bowerStream = g.bowerFiles();
+  var bowerStream = mainBowerFiles();
 
   return es.merge(
     bowerStream.pipe(g.filter('**/*.css')).pipe(dist('css', 'vendors')),
@@ -114,7 +115,7 @@ function index() {
   var opt = {read: false};
 
   return gulp.src('./src/app/index.html')
-    .pipe(g.inject(g.bowerFiles(opt), {ignorePath: 'bower_components', starttag: '<!-- inject:vendor:{{ext}} -->'}))
+    .pipe(g.inject(gulp.src(mainBowerFiles(opt)), {ignorePath: 'bower_components', starttag: '<!-- inject:vendor:{{ext}} -->'}))
     .pipe(g.inject(es.merge(appFiles(), cssFiles(opt)), {ignorePath: ['.tmp', 'src/app']}))
     .pipe(g.embedlr())
     .pipe(replace({
@@ -269,7 +270,7 @@ gulp.task('karma-conf', ['templates'], function() {
  */
 function testFiles() {
   return new queue({objectMode: true})
-    .queue(g.bowerFiles().pipe(g.filter('**/*.js')))
+    .queue(gulp.src(mainBowerFiles()).pipe(g.filter('**/*.js')))
     .queue(gulp.src('./bower_components/angular-mocks/angular-mocks.js'))
     .queue(appFiles())
     .queue(gulp.src('./src/app/**/*_test.js'))
