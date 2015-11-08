@@ -1,6 +1,6 @@
 
 module.exports = function ( karma ) {
-  process.env.PHANTOMJS_BIN = 'node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs';
+  process.env.PHANTOMJS_BIN = 'node_modules/phantomjs/bin/phantomjs';
 
   karma.set({
     /**
@@ -14,13 +14,13 @@ module.exports = function ( karma ) {
     files: [
     ],
 
-    frameworks: [ 'mocha', 'chai' ],
-    plugins: [ 'karma-mocha', 'karma-chai', 'karma-phantomjs-launcher' ],
+    frameworks: [ 'mocha', 'chai', 'sinon-chai' ],
+    plugins: [ 'karma-mocha', 'karma-mocha-reporter', 'karma-chai', 'karma-sinon-chai', 'karma-phantomjs-launcher' ],
 
     /**
      * How to report, by default.
      */
-    reporters: 'progress',
+    reporters: 'mocha',
 
     /**
      * Show colors in output?

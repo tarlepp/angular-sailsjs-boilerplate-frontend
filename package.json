@@ -15,6 +15,7 @@
     "connect-history-api-fallback": "1.1.0"
   },
   "devDependencies": {
+    "chai": "3.4.1",
     "event-stream": "3.3.2",
     "gulp": "3.9.0",
     "gulp-angular-filesort": "1.1.1",
@@ -46,8 +47,14 @@
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "0.2.1",
     "karma-mocha": "0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "0.2.1",
+    "karma-sinon-chai": "1.1.0",
     "lazypipe": "1.0.1",
-    "main-bower-files": "^2.9.0",
+    "main-bower-files": "2.9.0",
+    "mocha": "2.3.3",
+    "phantomjs": "1.9.18",
+    "sinon": "^1.17.2",
     "sort-stream": "1.0.1",
     "streamqueue": "1.1.1",
     "tiny-lr": "0.2.1"

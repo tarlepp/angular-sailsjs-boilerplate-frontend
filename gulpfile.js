@@ -250,8 +250,8 @@ gulp.task('lint', ['jshint', 'csslint', 'scsslint']);
 gulp.task('test', ['templates'], function() {
   return testFiles()
     .pipe(g.karma({
-      configFile: 'karma.conf.js',
-      action: 'run'
+      configFile: __dirname + '/karma.conf.js',
+      singleRun: true
     }))
   ;
 });
