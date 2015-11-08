@@ -1,21 +1,17 @@
-.input-sm,
-select.input-sm,
-.form-horizontal .form-group-sm .form-control {
-  height: 29px;
-}
+$color-button-info: #fff;
 
 .editable-wrap {
   display: inline;
 }
 
-textarea {
+.editable-textarea {
   min-height: 350px;
 }
 
 .btn {
   &.active {
-    span.text-info {
-      color: #ffffff;
+    .text-info {
+      color: $color-button-info;
     }
   }
 }

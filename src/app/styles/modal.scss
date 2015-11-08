@@ -1,4 +1,10 @@
-@import "mixins";
+@import 'mixins';
+
+$color-border: #ccc;
+$color-header-start: #fff;
+$color-header-end: #eee;
+$color-footer-start: #eee;
+$color-footer-end: #fff;
 
 .modal {
   overflow: auto;
@@ -8,31 +14,31 @@
   }
 }
 
-body.modal-open {
+.modal-open {
   overflow-y: scroll;
-  padding-right: 0 !important;
 }
 
 .modal-header,
 .modal-footer {
-  @include noSelect();
-  border-color: #cccccc;
+  @include no-select();
+  border-color: $color-border;
 }
 
 .modal-header {
-  @include linear-gradient(#ffffff, #eeeeee);
-  padding: 10px 15px;
+  @include linear-gradient($color-header-start, $color-header-end);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  padding: 10px 15px;
 
   .close {
-    margin-top: -10px;
     font-size: 45px;
+    margin-top: -10px;
   }
 }
 
 .modal-body {
-  @include noSelect();
+  @include no-select();
+
   overflow-x: auto;
   overflow-y: scroll;
 
@@ -42,7 +48,7 @@ body.modal-open {
 }
 
 .modal-footer {
-  @include linear-gradient(#eeeeee, #ffffff);
+  @include linear-gradient($color-footer-start, $color-footer-end);
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-top: 0;

@@ -75,6 +75,15 @@ gulp.task('csslint', ['styles'], function() {
   ;
 });
 
+gulp.task('scsslint', ['styles'], function() {
+  var scsslint = g.scssLint;
+
+  return gulp.src('./src/app/**/*.scss')
+    .pipe(scsslint({
+      config: './scsslint.yml'
+    }));
+});
+
 /**
  * Scripts
  */
@@ -218,7 +227,7 @@ gulp.task('watch', ['statics', 'default'], function() {
 
   gulp.watch('./src/app/index.html', ['index']);
   gulp.watch(['./src/app/**/*.html', '!./src/app/index.html'], ['templates']);
-  gulp.watch(['./src/app/**/*.scss'], ['csslint']).on('change', function(evt) {
+  gulp.watch(['./src/app/**/*.scss'], ['csslint', 'scsslint']).on('change', function(evt) {
     if (evt.type !== 'changed') {
       gulp.start('index');
     }
@@ -233,7 +242,7 @@ gulp.task('default', ['lint', 'build-all']);
 /**
  * Lint everything
  */
-gulp.task('lint', ['jshint', 'csslint']);
+gulp.task('lint', ['jshint', 'csslint', 'scsslint']);
 
 /**
  * Test

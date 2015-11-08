@@ -1,29 +1,40 @@
-@import "mixins";
-@import "forms";
-@import "components";
-@import "bootstrap";
-@import "angular";
+@import 'mixins';
+@import 'forms';
+@import 'components';
+@import 'bootstrap';
+@import 'angular';
+
+$color-footer-text: #999;
+$color-footer-hover-text: #3399f3;
+$color-footer-hover-icons: #337bd5;
+$color-tooltip-title: #fff;
+$color-tooltip-title-border: #9b9b9b;
 
 body {
   cursor: default;
-  overflow-y: scroll;
   font-family: 'PT Sans', sans-serif;
+  overflow-y: scroll;
 }
 
-h1, h2, h3, h4, h5, h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
   &:first-of-type {
     margin-top: 10px;
   }
 }
 
 .container {
-  min-width: 100%;
   max-width: 100%;
+  min-width: 100%;
 }
 
 .main-container {
-  margin-top: 50px;
   margin-bottom: 30px;
+  margin-top: 50px;
 }
 
 header .navbar-nav {
@@ -32,35 +43,35 @@ header .navbar-nav {
 
 footer {
   .navbar {
-    min-height: 25px;
     max-height: 25px;
+    min-height: 25px;
     text-align: center;
 
     .navbar-nav {
       float: none;
 
-      &> li {
-        float: none;
+      > li {
         display: inline-block;
+        float: none;
 
         > a {
-          padding: 0 10px;
-          line-height: 25px;
           font-size: 11px;
+          line-height: 25px;
+          padding: 0 10px;
 
           .fa {
+            color: $color-footer-text;
+            font-size: 14px;
+            margin-right: 3px;
             position: relative;
             top: 1px;
-            margin-right: 3px;
-            font-size: 14px;
-            color: #999999;
           }
 
           &:hover {
-            color: #3399f3;
+            color: $color-footer-hover-text;
 
             .fa {
-              color: #337bd5;
+              color: $color-footer-hover-icons;
             }
           }
         }
@@ -69,8 +80,8 @@ footer {
   }
 }
 
-.noSelect {
-  @include noSelect();
+.no-select {
+  @include no-select();
 }
 
 .pagination {
@@ -87,19 +98,19 @@ footer {
 
 .help {
   .fa {
-    position: relative;
-    top: 2px;
     font-size: 20px;
     line-height: 14px;
     margin: 0 0 0 5px;
+    position: relative;
+    top: 2px;
   }
 }
 
 .tooltip {
   .title {
-    color: #ffffff;
-    border-bottom: 1px solid #9b9b9b;
-    margin: 3px 0 5px 0;
+    border-bottom: 1px solid $color-tooltip-title-border;
+    color: $color-tooltip-title;
+    margin: 3px 0 5px;
     padding: 0;
   }
 

@@ -1,14 +1,16 @@
+$color-border: #dfdfdf;
+
 .chat {
   margin: 0 15px;
   padding: 0;
 
   .messages {
-    border: 1px solid #dfdfdf;
-    border-top: none;
-    border-bottom: none;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    border: 1px solid $color-border;
+    border-bottom: 0;
+    border-top: 0;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding: 0 10px;
 
     code {
@@ -16,8 +18,8 @@
     }
 
     .time {
-      position: absolute;
       left: 5px;
+      position: absolute;
     }
 
     .message {
@@ -25,16 +27,14 @@
     }
   }
 
-  .input-group {
-    .form-control,
-    .input-group-addon {
-      &:first-child {
-        border-top-left-radius: 0;
-      }
+  .form-control,
+  .input-group-addon {
+    &:first-child {
+      border-top-left-radius: 0;
     }
+  }
 
-    .input-group-btn:last-child > .btn {
-      border-top-right-radius: 0;
-    }
+  .input-group-btn:last-child > .btn {
+    border-top-right-radius: 0;
   }
 }
