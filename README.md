@@ -39,6 +39,12 @@ To start developing in the project run:
 gulp serve
 ```
 
+or
+
+```bash
+npm start
+```
+
 Then head to `http://localhost:3001` in your browser.
 
 The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches
