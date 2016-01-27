@@ -217,7 +217,7 @@ gulp.task('watch', ['statics', 'default'], function() {
   isWatching = true;
 
   // Initiate livereload server:
-  g.livereload();
+  g.livereload.listen();
 
   gulp.watch('./src/app/**/*.js', ['jshint']).on('change', function(evt) {
     if (evt.type !== 'changed') {
