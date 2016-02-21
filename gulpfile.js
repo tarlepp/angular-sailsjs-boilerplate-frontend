@@ -106,7 +106,7 @@ gulp.task('templates-dist', function() {
  * Vendors
  */
 gulp.task('vendors', function() {
-  var bowerStream = mainBowerFiles();
+  var bowerStream = gulp.src(mainBowerFiles());
 
   return es.merge(
     bowerStream.pipe(g.filter('**/*.css')).pipe(dist('css', 'vendors')),
