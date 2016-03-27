@@ -11,8 +11,8 @@
     "slush, angular, slush-angular"
   ],
   "dependencies": {
-    "bower": "1.6.5",
-    "connect-history-api-fallback": "1.1.0"
+    "bower": "1.7.7",
+    "connect-history-api-fallback": "1.2.0"
   },
   "devDependencies": {
     "chai": "3.4.1",
