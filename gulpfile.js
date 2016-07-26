@@ -13,6 +13,7 @@ var stylish = require('jshint-stylish');
 var bower = require('./bower');
 var mainBowerFiles = require('main-bower-files');
 var historyApiFallback = require('connect-history-api-fallback');
+var sassLint = require('gulp-sass-lint');
 var isWatching = false;
 
 var htmlminOpts = {
@@ -76,12 +77,10 @@ gulp.task('csslint', ['styles'], function() {
 });
 
 gulp.task('scsslint', ['styles'], function() {
-  var scsslint = g.scssLint;
-
   return gulp.src('./src/app/**/*.scss')
-    .pipe(scsslint({
-      config: './scsslint.yml'
-    }));
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
 });
 
 /**
