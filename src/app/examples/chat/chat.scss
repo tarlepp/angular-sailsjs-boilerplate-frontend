@@ -6,8 +6,6 @@ $color-border: #dfdfdf;
 
   .messages {
     border: 1px solid $color-border;
-    border-bottom: 0;
-    border-top: 0;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -34,7 +32,9 @@ $color-border: #dfdfdf;
     }
   }
 
-  .input-group-btn:last-child > .btn {
-    border-top-right-radius: 0;
+  .input-group-btn {
+    &:last-child > .btn {
+      border-top-right-radius: 0;
+    }
   }
 }

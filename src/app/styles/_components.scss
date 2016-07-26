@@ -2,9 +2,11 @@
   padding: 0;
   text-align: right;
 
-  .fa.fa-plus-circle {
-    position: relative;
-    top: -6px;
+  .fa {
+    .fa-plus-circle {
+      position: relative;
+      top: -6px;
+    }
   }
 
   .list-search-filters {

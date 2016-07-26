@@ -37,8 +37,10 @@ h5 {
   margin-top: 50px;
 }
 
-header .navbar-nav {
-  float: none;
+header {
+  .navbar-nav {
+    float: none;
+  }
 }
 
 footer {
