@@ -7,7 +7,7 @@ var fs = require('fs');
 var g = require('gulp-load-plugins')({lazy: false});
 var noop = g.util.noop;
 var es = require('event-stream');
-var queue = require('streamqueue');
+var Queue = require('streamqueue');
 var lazypipe = require('lazypipe');
 var stylish = require('jshint-stylish');
 var bower = require('./bower');
@@ -278,11 +278,11 @@ gulp.task('karma-conf', ['templates'], function() {
  * Test files
  */
 function testFiles() {
-  return new queue({objectMode: true})
-    .queue(gulp.src(mainBowerFiles()).pipe(g.filter('**/*.js')))
-    .queue(gulp.src('./bower_components/angular-mocks/angular-mocks.js'))
-    .queue(appFiles())
-    .queue(gulp.src('./src/app/**/*_test.js'))
+  return new Queue({objectMode: true})
+    .Queue(gulp.src(mainBowerFiles()).pipe(g.filter('**/*.js')))
+    .Queue(gulp.src('./bower_components/angular-mocks/angular-mocks.js'))
+    .Queue(appFiles())
+    .Queue(gulp.src('./src/app/**/*_test.js'))
     .done()
   ;
 }
